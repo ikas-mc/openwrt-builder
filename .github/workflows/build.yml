@@ -59,8 +59,10 @@ jobs:
           ./build.sh xg-040g-md
           
       - name: upload openwrt
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: openwrt-bin
+          include-hidden-files: true
+          retention-days: 7
           path: |
             openwrt/bin
