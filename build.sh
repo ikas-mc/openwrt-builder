@@ -5,7 +5,7 @@ BASE_PATH=$(pwd)
 
 cd openwrt-config/ikas-packages
 chmod +x ./project-list.sh
-./project-list.sh
+./project-list.sh > /dev/null 2>&1
 
 cd $BASE_PATH
 
