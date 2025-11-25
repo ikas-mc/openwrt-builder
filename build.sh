@@ -21,10 +21,17 @@ cd openwrt
 chmod +x ./custom.sh
 ./custom.sh
 
+#https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
+echo "Current .config:"
+cat .config
+
 make defconfig
 
-make -j $(nproc) download V=s
-make -j $(nproc) V=s
+echo "Final .config:"
+cat .config
+
+make -j $(nproc) download world
