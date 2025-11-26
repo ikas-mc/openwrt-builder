@@ -60,4 +60,4 @@ jobs:
           include-hidden-files: true
           retention-days: 7
           path: |
-            openwrt/bin
+            openwrt/bin/targets
