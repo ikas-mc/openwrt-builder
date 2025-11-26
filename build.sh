@@ -23,19 +23,12 @@ chmod +x ./custom.sh
 
 #https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem
 
-cp diffconfig .config
 ./scripts/feeds update -a
 ./scripts/feeds install -a
-echo "diff .config:"
-cat .config
 
 cp diffconfig .config
-echo "build .config:"
-cat .config
-
 make defconfig
-
-echo "Final .config:"
-cat .config
+#echo "Final .config:"
+#cat .config
 
 make -j $(nproc) download world
