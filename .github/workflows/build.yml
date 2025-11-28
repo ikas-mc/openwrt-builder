@@ -32,12 +32,12 @@ jobs:
           fetch-depth: 1
           path: main
 
-      - uses: actions/checkout@v6
-        with:
-          repository: ikas-mc/openwrt
-          ref: 'xg-040g-md'
-          fetch-depth: 1
-          path: openwrt
+      # - uses: actions/checkout@v6
+      #   with:
+      #     repository: ikas-mc/openwrt
+      #     ref: 'xg-040g-md'
+      #     fetch-depth: 1
+      #     path: openwrt
 
       - uses: actions/checkout@v6
         with:
