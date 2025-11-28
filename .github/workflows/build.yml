@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v6
         with:
           repository: ikas-mc/openwrt
-          ref: 'dev-040-md'
+          ref: 'xg-040g-md'
           fetch-depth: 1
           path: openwrt
 
