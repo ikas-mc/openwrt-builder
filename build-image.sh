@@ -3,7 +3,7 @@
 DEVICE_NAME=$1
 BASE_PATH=$(pwd)
 
-source openwrt-config/devices/${DEVICE_NAME}/config.txt
+source openwrt-config/devices/${DEVICE_NAME}/apk/config.txt
 
 curl -o openwrt.tar.zst ${CONFIG_SDK_URL}
 tar --zstd -xvf openwrt.tar.zst
