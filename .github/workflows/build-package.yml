@@ -1,0 +1,45 @@
+name: build openwrt package
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: system setup
+        run: |
+          sudo apt update
+          sudo apt install build-essential file libncurses-dev zlib1g-dev gawk git \
+          gettext libssl-dev xsltproc rsync wget unzip python3 python3-distutils
+
+      - name: checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          path: main
+
+      - uses: actions/checkout@v6
+        with:
+          repository: ikas-mc/openwrt-config
+          ref: 'main'
+          fetch-depth: 1
+          token: ${{ secrets.GH_PAT }}
+          path: openwrt-config
+      
+      - name: build
+        run: |
+          cp main/build-package.sh ./build.sh
+          chmod +x ./build.sh
+          ./build.sh amd64
+          
+      - name: upload openwrt-packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: openwrt-packages
+          include-hidden-files: true
+          retention-days: 7
+          path: |
+            openwrt-sdk/bin/packages
