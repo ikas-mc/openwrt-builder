@@ -18,6 +18,9 @@ rm openwrt.sdk.tar.zst
 cp openwrt-config/devices/${DEVICE_NAME}/apk/sdk_package_config.txt openwrt-sdk/diffconfig
 cp -r openwrt-config/openwrt/* openwrt-sdk/
 
+cp openwrt-config/ikas-packages/project-compile.sh openwrt-sdk/make.sh
+
+
 cd openwrt-sdk
 
 ./scripts/feeds update -a
@@ -26,4 +29,6 @@ cd openwrt-sdk
 cp diffconfig .config
 make defconfig
 
-make -j $(nproc)  V=sc IGNORE_ERRORS=m
+#make -j $(nproc)  V=s IGNORE_ERRORS=m
+chmod +x ./make.sh
+./make.sh

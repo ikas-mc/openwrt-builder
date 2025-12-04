@@ -34,4 +34,4 @@ make defconfig
 #echo "Final .config:"
 #cat .config
 
-make -j $(nproc) download world V=sc
+make -j $(nproc) download world V=s
