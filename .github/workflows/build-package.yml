@@ -42,4 +42,4 @@ jobs:
           include-hidden-files: true
           retention-days: 7
           path: |
-            openwrt-sdk/bin/packages
+            openwrt-sdk/bin/packages/
