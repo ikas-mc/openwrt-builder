@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 DEVICE_NAME=$1
 BASE_PATH=$(pwd)
