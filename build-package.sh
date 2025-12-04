@@ -3,7 +3,7 @@
 DEVICE_NAME=$1
 BASE_PATH=$(pwd)
 
-source openwrt-config/devices/${DEVICE_NAME}/sdk_package_env.txt
+source openwrt-config/devices/${DEVICE_NAME}/apk/sdk_package_env.txt
 
 cd openwrt-config/ikas-packages
 chmod +x ./project-list.sh
