@@ -43,7 +43,7 @@ jobs:
           include-hidden-files: true
           retention-days: 7
           path: |
-            openwrt-image/bin/targets/*/*combined-efi.img.gz
-            openwrt-image/bin/targets/*/*kernel.bin
-            openwrt-image/bin/targets/*/*rootfs.tar.gz
-            openwrt-image/bin/targets/*/sha256sums
+            openwrt-image/bin/targets/**/*combined-efi.img.gz
+            openwrt-image/bin/targets/**/*kernel.bin
+            openwrt-image/bin/targets/**/*rootfs.tar.gz
+            openwrt-image/bin/targets/**/sha256sums
