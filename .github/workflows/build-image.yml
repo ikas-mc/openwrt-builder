@@ -2,6 +2,20 @@ name: build openwrt (Image Builder)
 
 on:
   workflow_dispatch:
+    inputs:
+      deviceId:
+        description: 'device id'
+        required: true
+        default: 'amd64'
+        type: choice
+        options:
+        - "amd64"
+        - "xg-040g-md"
+      enableDebug:
+        description: 'enable debug log'
+        required: false
+        default: false
+        type: boolean
     
 jobs:
   build:
@@ -34,7 +48,7 @@ jobs:
         run: |
           cp main/build-image.sh ./build.sh
           chmod +x ./build.sh
-          ./build.sh amd64
+          ./build.sh ${{ github.event.inputs.deviceId }} ${{ github.event.inputs.enableDebug }}
           
       - name: upload openwrt-image
         uses: actions/upload-artifact@v4
