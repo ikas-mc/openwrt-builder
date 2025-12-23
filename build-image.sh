@@ -10,12 +10,9 @@ tar --zstd -xvf openwrt.tar.zst
 mv openwrt-imagebuilder-* openwrt-image
 rm openwrt.tar.zst
 
-cp openwrt-config/devices/${DEVICE_NAME}/custom.sh ./openwrt-image/custom.sh
+cp -r openwrt-config/ikas-packages/packages/* ./openwrt-image/packages/
 
 cd openwrt-image
-
-chmod +x ./custom.sh
-./custom.sh
 
 make manifest \
 STRIP_ABI=1 \
