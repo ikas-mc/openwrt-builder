@@ -52,14 +52,22 @@ jobs:
           chmod +x ./build.sh
           ./build.sh ${{ github.event.inputs.deviceId }} ${{ github.event.inputs.enableDebug }}
           
-      - name: upload openwrt-image
+      - name: upload openwrt-bin-rootfs
         uses: actions/upload-artifact@v4
         with:
-          name: openwrt-image-bin
+          name: openwrt-bin-rootfs
           include-hidden-files: true
-          retention-days: 7
+          retention-days: 1
           path: |
-            openwrt-image/bin/targets/**/*combined-efi.img.gz
             openwrt-image/bin/targets/**/*kernel.bin
             openwrt-image/bin/targets/**/*rootfs.tar.gz
             openwrt-image/bin/targets/**/sha256sums
+
+      - name: upload openwrt-bin-all
+        uses: actions/upload-artifact@v4
+        with:
+          name: openwrt-bin-all
+          include-hidden-files: true
+          retention-days: 1
+          path: |
+            openwrt-image/bin/targets/*
