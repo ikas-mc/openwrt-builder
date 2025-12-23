@@ -11,6 +11,7 @@ on:
         options:
         - "amd64"
         - "xg-040g-md"
+        - "cmcc_rax3000m"
       enableDebug:
         description: 'enable debug log'
         required: false
