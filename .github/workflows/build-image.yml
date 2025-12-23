@@ -44,6 +44,7 @@ jobs:
           fetch-depth: 1
           token: ${{ secrets.GH_PAT }}
           path: openwrt-config
+          lfs:  true
       
       - name: build
         run: |
