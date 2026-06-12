@@ -12,6 +12,7 @@ on:
         - "amd64"
         - "xg-040g-md"
         - "xg-040g-md-old"
+        - "xg-040g-md-2"
         - "cmcc_rax3000m"
       enableDebug:
         description: 'enable debug log'
